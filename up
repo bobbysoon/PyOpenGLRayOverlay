@@ -1,0 +1,14 @@
+#!/bin/bash
+
+git add up
+git add ./*.py
+git add ./*.frag
+git add ./*.vert
+git add ./*.jpeg
+git add ./*.txt
+git commit -m "$(date +%s)"
+git remote add origin https://github.com/bobbysoon/PyOpenGLRayOverlay.git
+git remote -v
+git push -f origin master $1
+
+find . -name "*.pyc" -type f|xargs rm -f
